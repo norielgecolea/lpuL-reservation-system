@@ -1,0 +1,18 @@
+package org.lpu.dev.codes.model.dto;
+
+import org.lpu.dev.codes.model.data.Facility;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+public class CreateVehicleRequest {
+	private String brand;
+	private String plate_num;
+	private Integer capacity;
+	private String vehicleDescription;
+	private Facility facility;
+	private String status;
+
+}

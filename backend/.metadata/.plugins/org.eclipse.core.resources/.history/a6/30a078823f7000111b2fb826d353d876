@@ -1,0 +1,45 @@
+package org.lpu.dev.codes.services;
+
+@Service
+public class VehicleImageService {
+
+    private static final String UPLOAD_DIR =
+            "uploads/vehicles/";
+
+    public String saveAsWebP(
+            MultipartFile file) throws Exception {
+
+        BufferedImage image =
+                ImageIO.read(file.getInputStream());
+
+        String fileName =
+                UUID.randomUUID() + ".webp";
+
+        Path uploadPath =
+                Paths.get(UPLOAD_DIR);
+
+        Files.createDirectories(uploadPath);
+
+        File outputFile =
+                uploadPath.resolve(fileName)
+                        .toFile();
+
+        ImageWriter writer =
+                ImageIO.getImageWritersByMIMEType(
+                        "image/webp")
+                        .next();
+
+        ImageOutputStream ios =
+                ImageIO.createImageOutputStream(
+                        outputFile);
+
+        writer.setOutput(ios);
+
+        writer.write(image);
+
+        ios.close();
+        writer.dispose();
+
+        return "/uploads/vehicles/" + fileName;
+    }
+}
