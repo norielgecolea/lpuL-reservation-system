@@ -1,0 +1,397 @@
+09-Jul-2026 00:18:24.811 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 00:18:24.941 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Jul-2026 00:18:25.617 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [lpu-reservation-system] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+09-Jul-2026 00:18:25.645 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [lpu-reservation-system] appears to have started a thread named [Resource Destroyer in BasicResourcePool.close()] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.io.RandomAccessFile.open0(Native Method)
+ java.base/java.io.RandomAccessFile.open(RandomAccessFile.java:356)
+ java.base/java.io.RandomAccessFile.<init>(RandomAccessFile.java:273)
+ java.base/java.io.RandomAccessFile.<init>(RandomAccessFile.java:223)
+ java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1492)
+ java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1458)
+ java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:724)
+ java.base/java.util.zip.ZipFile.<init>(ZipFile.java:251)
+ java.base/java.util.zip.ZipFile.<init>(ZipFile.java:180)
+ java.base/java.util.jar.JarFile.<init>(JarFile.java:345)
+ org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:367)
+ org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:95)
+ org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:281)
+ org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:273)
+ org.apache.catalina.webresources.Cache.getResource(Cache.java:64)
+ org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:212)
+ org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:221)
+ org.apache.catalina.loader.WebappClassLoaderBase.findClassInternal(WebappClassLoaderBase.java:2065)
+ org.apache.catalina.loader.WebappClassLoaderBase.findClass(WebappClassLoaderBase.java:693)
+ org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1186)
+ org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1056)
+ com.mchange.v2.resourcepool.BasicResourcePool.destroyResource(BasicResourcePool.java:1130)
+ com.mchange.v2.resourcepool.BasicResourcePool.destroyResource(BasicResourcePool.java:1100)
+ com.mchange.v2.resourcepool.BasicResourcePool.access$100(BasicResourcePool.java:44)
+ com.mchange.v2.resourcepool.BasicResourcePool$5.run(BasicResourcePool.java:1354)
+09-Jul-2026 00:18:35.768 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.22
+09-Jul-2026 00:18:35.780 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 1 2026 18:29:05 UTC
+09-Jul-2026 00:18:35.781 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.22.0
+09-Jul-2026 00:18:35.781 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+09-Jul-2026 00:18:35.781 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.12.76-linuxkit
+09-Jul-2026 00:18:35.781 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+09-Jul-2026 00:18:35.781 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /opt/java/openjdk
+09-Jul-2026 00:18:35.781 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.11+10-LTS
+09-Jul-2026 00:18:35.782 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Eclipse Adoptium
+09-Jul-2026 00:18:35.782 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /usr/local/tomcat
+09-Jul-2026 00:18:35.782 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /usr/local/tomcat
+09-Jul-2026 00:18:35.806 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties
+09-Jul-2026 00:18:35.807 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Jul-2026 00:18:35.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+09-Jul-2026 00:18:35.809 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+09-Jul-2026 00:18:35.810 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+09-Jul-2026 00:18:35.810 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+09-Jul-2026 00:18:35.810 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+09-Jul-2026 00:18:35.810 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+09-Jul-2026 00:18:35.810 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+09-Jul-2026 00:18:35.810 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+09-Jul-2026 00:18:35.810 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+09-Jul-2026 00:18:35.811 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/usr/local/tomcat
+09-Jul-2026 00:18:35.811 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/usr/local/tomcat
+09-Jul-2026 00:18:35.811 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/usr/local/tomcat/temp
+09-Jul-2026 00:18:35.825 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.14] using APR version [1.7.2].
+09-Jul-2026 00:18:35.837 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+09-Jul-2026 00:18:36.193 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 00:18:36.254 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1061] milliseconds
+09-Jul-2026 00:18:36.347 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Jul-2026 00:18:36.348 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.22]
+09-Jul-2026 00:18:36.383 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/usr/local/tomcat/webapps/lpu-reservation-system.war]
+09-Jul-2026 00:18:36.402 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/usr/local/tomcat/webapps/lpu-reservation-system] was found with a last modified time that did not match the associated WAR. It will be deleted.
+09-Jul-2026 00:18:59.215 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Jul-2026 00:19:00.563 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/usr/local/tomcat/webapps/lpu-reservation-system.war] has finished in [24,178] ms
+09-Jul-2026 00:19:00.566 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/usr/local/tomcat/webapps/uploads]
+09-Jul-2026 00:19:00.599 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/usr/local/tomcat/webapps/uploads] has finished in [34] ms
+09-Jul-2026 00:19:00.610 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 00:19:00.662 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [24410] milliseconds
+09-Jul-2026 00:30:47.922 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 00:30:47.952 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Jul-2026 00:30:48.343 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [lpu-reservation-system] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+09-Jul-2026 00:30:48.447 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 00:30:48.479 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 00:31:13.169 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.22
+09-Jul-2026 00:31:13.187 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 1 2026 18:29:05 UTC
+09-Jul-2026 00:31:13.187 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.22.0
+09-Jul-2026 00:31:13.187 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+09-Jul-2026 00:31:13.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.12.76-linuxkit
+09-Jul-2026 00:31:13.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+09-Jul-2026 00:31:13.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /opt/java/openjdk
+09-Jul-2026 00:31:13.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.11+10-LTS
+09-Jul-2026 00:31:13.189 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Eclipse Adoptium
+09-Jul-2026 00:31:13.189 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /usr/local/tomcat
+09-Jul-2026 00:31:13.189 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /usr/local/tomcat
+09-Jul-2026 00:31:13.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties
+09-Jul-2026 00:31:13.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Jul-2026 00:31:13.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+09-Jul-2026 00:31:13.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+09-Jul-2026 00:31:13.225 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+09-Jul-2026 00:31:13.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+09-Jul-2026 00:31:13.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+09-Jul-2026 00:31:13.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+09-Jul-2026 00:31:13.227 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+09-Jul-2026 00:31:13.227 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+09-Jul-2026 00:31:13.227 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+09-Jul-2026 00:31:13.227 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/usr/local/tomcat
+09-Jul-2026 00:31:13.227 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/usr/local/tomcat
+09-Jul-2026 00:31:13.227 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/usr/local/tomcat/temp
+09-Jul-2026 00:31:13.275 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.14] using APR version [1.7.2].
+09-Jul-2026 00:31:13.297 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+09-Jul-2026 00:31:13.913 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 00:31:13.976 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1302] milliseconds
+09-Jul-2026 00:31:14.312 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Jul-2026 00:31:14.313 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.22]
+09-Jul-2026 00:31:14.474 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/usr/local/tomcat/webapps/lpu-reservation-system.war]
+09-Jul-2026 00:31:14.549 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/usr/local/tomcat/webapps/lpu-reservation-system] was found with a last modified time that did not match the associated WAR. It will be deleted.
+09-Jul-2026 00:33:54.525 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Jul-2026 00:34:02.109 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/usr/local/tomcat/webapps/lpu-reservation-system.war] has finished in [167,630] ms
+09-Jul-2026 00:34:02.120 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/usr/local/tomcat/webapps/uploads]
+09-Jul-2026 00:34:02.356 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/usr/local/tomcat/webapps/uploads] has finished in [236] ms
+09-Jul-2026 00:34:02.395 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 00:34:02.571 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [168345] milliseconds
+09-Jul-2026 00:38:43.472 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 00:38:43.509 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Jul-2026 00:38:43.776 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [lpu-reservation-system] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+09-Jul-2026 00:38:43.780 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [lpu-reservation-system] appears to have started a thread named [Resource Destroyer in BasicResourcePool.close()] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.io.RandomAccessFile.readBytes0(Native Method)
+ java.base/java.io.RandomAccessFile.readBytes(RandomAccessFile.java:400)
+ java.base/java.io.RandomAccessFile.read(RandomAccessFile.java:434)
+ java.base/java.io.RandomAccessFile.readFully(RandomAccessFile.java:498)
+ java.base/java.util.zip.ZipFile$Source.readFullyAt(ZipFile.java:1528)
+ java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1575)
+ java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657)
+ java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1495)
+ java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1458)
+ java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:724)
+ java.base/java.util.zip.ZipFile.<init>(ZipFile.java:251)
+ java.base/java.util.zip.ZipFile.<init>(ZipFile.java:180)
+ java.base/java.util.jar.JarFile.<init>(JarFile.java:345)
+ org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:367)
+ org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:95)
+ org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:286)
+ org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:273)
+ org.apache.catalina.webresources.Cache.getResource(Cache.java:64)
+ org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:212)
+ org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:221)
+ org.apache.catalina.loader.WebappClassLoaderBase.findClassInternal(WebappClassLoaderBase.java:2065)
+ org.apache.catalina.loader.WebappClassLoaderBase.findClass(WebappClassLoaderBase.java:693)
+ org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1186)
+ org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1056)
+ com.mchange.v2.resourcepool.BasicResourcePool.destroyResource(BasicResourcePool.java:1130)
+ com.mchange.v2.resourcepool.BasicResourcePool.destroyResource(BasicResourcePool.java:1100)
+ com.mchange.v2.resourcepool.BasicResourcePool.access$100(BasicResourcePool.java:44)
+ com.mchange.v2.resourcepool.BasicResourcePool$5.run(BasicResourcePool.java:1354)
+09-Jul-2026 00:38:43.822 INFO [50] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load [com.mchange.v2.resourcepool.BasicResourcePool$1DestroyResourceTask]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [com.mchange.v2.resourcepool.BasicResourcePool$1DestroyResourceTask]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1244)
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1233)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1089)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1056)
+		at com.mchange.v2.resourcepool.BasicResourcePool.destroyResource(BasicResourcePool.java:1130)
+		at com.mchange.v2.resourcepool.BasicResourcePool.destroyResource(BasicResourcePool.java:1100)
+		at com.mchange.v2.resourcepool.BasicResourcePool.access$100(BasicResourcePool.java:44)
+		at com.mchange.v2.resourcepool.BasicResourcePool$5.run(BasicResourcePool.java:1354)
+09-Jul-2026 00:38:43.845 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 00:38:43.892 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 00:40:33.783 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.22
+09-Jul-2026 00:40:33.792 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 1 2026 18:29:05 UTC
+09-Jul-2026 00:40:33.793 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.22.0
+09-Jul-2026 00:40:33.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+09-Jul-2026 00:40:33.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.12.76-linuxkit
+09-Jul-2026 00:40:33.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+09-Jul-2026 00:40:33.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /opt/java/openjdk
+09-Jul-2026 00:40:33.794 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.11+10-LTS
+09-Jul-2026 00:40:33.795 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Eclipse Adoptium
+09-Jul-2026 00:40:33.795 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /usr/local/tomcat
+09-Jul-2026 00:40:33.795 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /usr/local/tomcat
+09-Jul-2026 00:40:33.813 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties
+09-Jul-2026 00:40:33.813 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Jul-2026 00:40:33.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+09-Jul-2026 00:40:33.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+09-Jul-2026 00:40:33.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+09-Jul-2026 00:40:33.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+09-Jul-2026 00:40:33.814 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+09-Jul-2026 00:40:33.815 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+09-Jul-2026 00:40:33.815 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+09-Jul-2026 00:40:33.815 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+09-Jul-2026 00:40:33.815 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+09-Jul-2026 00:40:33.815 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/usr/local/tomcat
+09-Jul-2026 00:40:33.815 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/usr/local/tomcat
+09-Jul-2026 00:40:33.815 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/usr/local/tomcat/temp
+09-Jul-2026 00:40:33.831 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.14] using APR version [1.7.2].
+09-Jul-2026 00:40:33.849 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+09-Jul-2026 00:40:34.353 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 00:40:34.461 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [992] milliseconds
+09-Jul-2026 00:40:34.538 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Jul-2026 00:40:34.538 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.22]
+09-Jul-2026 00:40:34.575 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/usr/local/tomcat/webapps/lpu-reservation-system.war]
+09-Jul-2026 00:40:34.597 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/usr/local/tomcat/webapps/lpu-reservation-system] was found with a last modified time that did not match the associated WAR. It will be deleted.
+09-Jul-2026 00:40:42.951 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Jul-2026 00:40:45.735 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/usr/local/tomcat/webapps/lpu-reservation-system.war] has finished in [11,159] ms
+09-Jul-2026 00:40:45.742 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/usr/local/tomcat/webapps/uploads]
+09-Jul-2026 00:40:45.779 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/usr/local/tomcat/webapps/uploads] has finished in [37] ms
+09-Jul-2026 00:40:45.794 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 00:40:45.891 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [11428] milliseconds
+09-Jul-2026 00:59:54.879 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 01:00:09.913 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.22
+09-Jul-2026 01:00:09.928 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 1 2026 18:29:05 UTC
+09-Jul-2026 01:00:09.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.22.0
+09-Jul-2026 01:00:09.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+09-Jul-2026 01:00:09.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.12.76-linuxkit
+09-Jul-2026 01:00:09.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+09-Jul-2026 01:00:09.932 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /opt/java/openjdk
+09-Jul-2026 01:00:09.934 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.11+10-LTS
+09-Jul-2026 01:00:09.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Eclipse Adoptium
+09-Jul-2026 01:00:09.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /usr/local/tomcat
+09-Jul-2026 01:00:09.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /usr/local/tomcat
+09-Jul-2026 01:00:10.016 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties
+09-Jul-2026 01:00:10.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Jul-2026 01:00:10.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+09-Jul-2026 01:00:10.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+09-Jul-2026 01:00:10.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+09-Jul-2026 01:00:10.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+09-Jul-2026 01:00:10.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+09-Jul-2026 01:00:10.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+09-Jul-2026 01:00:10.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+09-Jul-2026 01:00:10.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+09-Jul-2026 01:00:10.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+09-Jul-2026 01:00:10.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/usr/local/tomcat
+09-Jul-2026 01:00:10.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/usr/local/tomcat
+09-Jul-2026 01:00:10.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/usr/local/tomcat/temp
+09-Jul-2026 01:00:10.060 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.14] using APR version [1.7.2].
+09-Jul-2026 01:00:10.107 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+09-Jul-2026 01:00:10.834 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 01:00:10.895 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1682] milliseconds
+09-Jul-2026 01:00:10.993 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Jul-2026 01:00:10.993 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.22]
+09-Jul-2026 01:00:11.068 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/usr/local/tomcat/webapps/lpu-reservation-system.war]
+09-Jul-2026 01:00:11.096 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/usr/local/tomcat/webapps/lpu-reservation-system] was found with a last modified time that did not match the associated WAR. It will be deleted.
+09-Jul-2026 01:01:08.312 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.22
+09-Jul-2026 01:01:08.358 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 1 2026 18:29:05 UTC
+09-Jul-2026 01:01:08.368 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.22.0
+09-Jul-2026 01:01:08.369 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+09-Jul-2026 01:01:08.370 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.12.76-linuxkit
+09-Jul-2026 01:01:08.370 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+09-Jul-2026 01:01:08.370 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /opt/java/openjdk
+09-Jul-2026 01:01:08.382 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.11+10-LTS
+09-Jul-2026 01:01:08.385 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Eclipse Adoptium
+09-Jul-2026 01:01:08.385 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /usr/local/tomcat
+09-Jul-2026 01:01:08.386 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /usr/local/tomcat
+09-Jul-2026 01:01:08.453 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties
+09-Jul-2026 01:01:08.453 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Jul-2026 01:01:08.453 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+09-Jul-2026 01:01:08.453 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+09-Jul-2026 01:01:08.453 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+09-Jul-2026 01:01:08.465 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+09-Jul-2026 01:01:08.477 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+09-Jul-2026 01:01:08.477 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+09-Jul-2026 01:01:08.477 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+09-Jul-2026 01:01:08.477 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+09-Jul-2026 01:01:08.480 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+09-Jul-2026 01:01:08.480 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/usr/local/tomcat
+09-Jul-2026 01:01:08.480 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/usr/local/tomcat
+09-Jul-2026 01:01:08.480 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/usr/local/tomcat/temp
+09-Jul-2026 01:01:08.506 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.14] using APR version [1.7.2].
+09-Jul-2026 01:01:08.523 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+09-Jul-2026 01:01:09.094 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 01:01:09.180 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1539] milliseconds
+09-Jul-2026 01:01:09.341 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Jul-2026 01:01:09.341 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.22]
+09-Jul-2026 01:01:09.452 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/usr/local/tomcat/webapps/lpu-reservation-system.war]
+09-Jul-2026 01:01:09.501 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/usr/local/tomcat/webapps/lpu-reservation-system] was found with a last modified time that did not match the associated WAR. It will be deleted.
+09-Jul-2026 01:01:38.086 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Jul-2026 01:01:42.433 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/usr/local/tomcat/webapps/lpu-reservation-system.war] has finished in [32,966] ms
+09-Jul-2026 01:01:42.450 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/usr/local/tomcat/webapps/uploads]
+09-Jul-2026 01:01:42.589 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/usr/local/tomcat/webapps/uploads] has finished in [139] ms
+09-Jul-2026 01:01:42.635 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 01:01:42.785 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [33614] milliseconds
+09-Jul-2026 01:08:41.369 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 01:12:41.238 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.22
+09-Jul-2026 01:12:41.305 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 1 2026 18:29:05 UTC
+09-Jul-2026 01:12:41.306 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.22.0
+09-Jul-2026 01:12:41.306 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+09-Jul-2026 01:12:41.306 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.12.76-linuxkit
+09-Jul-2026 01:12:41.306 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+09-Jul-2026 01:12:41.307 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /opt/java/openjdk
+09-Jul-2026 01:12:41.307 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.11+10-LTS
+09-Jul-2026 01:12:41.307 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Eclipse Adoptium
+09-Jul-2026 01:12:41.307 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /usr/local/tomcat
+09-Jul-2026 01:12:41.307 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /usr/local/tomcat
+09-Jul-2026 01:12:44.739 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties
+09-Jul-2026 01:12:44.790 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Jul-2026 01:12:44.802 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+09-Jul-2026 01:12:44.803 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+09-Jul-2026 01:12:44.803 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+09-Jul-2026 01:12:44.806 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+09-Jul-2026 01:12:44.823 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+09-Jul-2026 01:12:44.823 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+09-Jul-2026 01:12:44.824 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+09-Jul-2026 01:12:44.913 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+09-Jul-2026 01:12:44.914 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+09-Jul-2026 01:12:44.915 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/usr/local/tomcat
+09-Jul-2026 01:12:44.918 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/usr/local/tomcat
+09-Jul-2026 01:12:44.918 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/usr/local/tomcat/temp
+09-Jul-2026 01:12:45.389 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.14] using APR version [1.7.2].
+09-Jul-2026 01:12:45.840 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+09-Jul-2026 01:12:53.561 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 01:12:54.162 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [18835] milliseconds
+09-Jul-2026 01:12:54.919 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Jul-2026 01:12:54.930 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.22]
+09-Jul-2026 01:12:55.471 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/usr/local/tomcat/webapps/lpu-reservation-system.war]
+09-Jul-2026 01:12:55.919 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/usr/local/tomcat/webapps/lpu-reservation-system] was found with a last modified time that did not match the associated WAR. It will be deleted.
+09-Jul-2026 01:14:08.472 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Jul-2026 01:14:12.392 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/usr/local/tomcat/webapps/lpu-reservation-system.war] has finished in [76,904] ms
+09-Jul-2026 01:14:12.396 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/usr/local/tomcat/webapps/uploads]
+09-Jul-2026 01:14:12.769 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/usr/local/tomcat/webapps/uploads] has finished in [363] ms
+09-Jul-2026 01:14:12.975 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 01:14:13.274 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [79077] milliseconds
+09-Jul-2026 23:47:08.252 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 23:47:08.286 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Jul-2026 23:47:08.553 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [lpu-reservation-system] registered the JDBC driver [org.postgresql.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+09-Jul-2026 23:47:08.556 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [lpu-reservation-system] appears to have started a thread named [Resource Destroyer in BasicResourcePool.close()] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.io.RandomAccessFile.readBytes0(Native Method)
+ java.base/java.io.RandomAccessFile.readBytes(RandomAccessFile.java:400)
+ java.base/java.io.RandomAccessFile.read(RandomAccessFile.java:434)
+ java.base/java.io.RandomAccessFile.readFully(RandomAccessFile.java:498)
+ java.base/java.util.zip.ZipFile$Source.readFullyAt(ZipFile.java:1528)
+ java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1575)
+ java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1657)
+ java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1495)
+ java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1458)
+ java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:724)
+ java.base/java.util.zip.ZipFile.<init>(ZipFile.java:251)
+ java.base/java.util.zip.ZipFile.<init>(ZipFile.java:180)
+ java.base/java.util.jar.JarFile.<init>(JarFile.java:345)
+ org.apache.catalina.webresources.AbstractArchiveResourceSet.openJarFile(AbstractArchiveResourceSet.java:367)
+ org.apache.catalina.webresources.AbstractSingleArchiveResourceSet.getArchiveEntry(AbstractSingleArchiveResourceSet.java:95)
+ org.apache.catalina.webresources.AbstractArchiveResourceSet.getResource(AbstractArchiveResourceSet.java:286)
+ org.apache.catalina.webresources.StandardRoot.getResourceInternal(StandardRoot.java:273)
+ org.apache.catalina.webresources.Cache.getResource(Cache.java:64)
+ org.apache.catalina.webresources.StandardRoot.getResource(StandardRoot.java:212)
+ org.apache.catalina.webresources.StandardRoot.getClassLoaderResource(StandardRoot.java:221)
+ org.apache.catalina.loader.WebappClassLoaderBase.findClassInternal(WebappClassLoaderBase.java:2065)
+ org.apache.catalina.loader.WebappClassLoaderBase.findClass(WebappClassLoaderBase.java:693)
+ org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1186)
+ org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1056)
+ com.mchange.v2.resourcepool.BasicResourcePool.destroyResource(BasicResourcePool.java:1130)
+ com.mchange.v2.resourcepool.BasicResourcePool.destroyResource(BasicResourcePool.java:1100)
+ com.mchange.v2.resourcepool.BasicResourcePool.access$100(BasicResourcePool.java:44)
+ com.mchange.v2.resourcepool.BasicResourcePool$5.run(BasicResourcePool.java:1354)
+09-Jul-2026 23:47:08.609 INFO [Resource Destroyer in BasicResourcePool.close()] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load [java.lang.ref.Cleaner$Cleanable]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [java.lang.ref.Cleaner$Cleanable]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1244)
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1233)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1089)
+		at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1056)
+		at org.postgresql.util.LazyCleanerImpl$CleanableWrapper.clean(LazyCleanerImpl.java:143)
+		at org.postgresql.jdbc.PgConnection.close(PgConnection.java:884)
+		at com.mchange.v2.c3p0.impl.NewPooledConnection.close(NewPooledConnection.java:642)
+		at com.mchange.v2.c3p0.impl.NewPooledConnection.closeMaybeCheckedOut(NewPooledConnection.java:255)
+		at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.destroyResource(C3P0PooledConnectionPool.java:622)
+		at com.mchange.v2.resourcepool.BasicResourcePool$1DestroyResourceTask.run(BasicResourcePool.java:1114)
+		at com.mchange.v2.resourcepool.BasicResourcePool.destroyResource(BasicResourcePool.java:1139)
+		at com.mchange.v2.resourcepool.BasicResourcePool.destroyResource(BasicResourcePool.java:1100)
+		at com.mchange.v2.resourcepool.BasicResourcePool.access$100(BasicResourcePool.java:44)
+		at com.mchange.v2.resourcepool.BasicResourcePool$5.run(BasicResourcePool.java:1354)
+09-Jul-2026 23:47:08.618 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 23:47:08.632 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 23:47:22.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.22
+09-Jul-2026 23:47:22.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 1 2026 18:29:05 UTC
+09-Jul-2026 23:47:22.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.22.0
+09-Jul-2026 23:47:22.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+09-Jul-2026 23:47:22.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.12.76-linuxkit
+09-Jul-2026 23:47:22.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+09-Jul-2026 23:47:22.027 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /opt/java/openjdk
+09-Jul-2026 23:47:22.029 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.11+10-LTS
+09-Jul-2026 23:47:22.029 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Eclipse Adoptium
+09-Jul-2026 23:47:22.029 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /usr/local/tomcat
+09-Jul-2026 23:47:22.030 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /usr/local/tomcat
+09-Jul-2026 23:47:22.040 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties
+09-Jul-2026 23:47:22.041 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Jul-2026 23:47:22.041 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+09-Jul-2026 23:47:22.041 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+09-Jul-2026 23:47:22.041 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+09-Jul-2026 23:47:22.041 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+09-Jul-2026 23:47:22.041 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+09-Jul-2026 23:47:22.041 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+09-Jul-2026 23:47:22.041 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+09-Jul-2026 23:47:22.042 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+09-Jul-2026 23:47:22.042 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+09-Jul-2026 23:47:22.042 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/usr/local/tomcat
+09-Jul-2026 23:47:22.042 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/usr/local/tomcat
+09-Jul-2026 23:47:22.042 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/usr/local/tomcat/temp
+09-Jul-2026 23:47:22.047 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.14] using APR version [1.7.2].
+09-Jul-2026 23:47:22.053 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+09-Jul-2026 23:47:22.258 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 23:47:22.283 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [432] milliseconds
+09-Jul-2026 23:47:22.336 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Jul-2026 23:47:22.336 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.22]
+09-Jul-2026 23:47:22.363 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/usr/local/tomcat/webapps/lpu-reservation-system.war]
+09-Jul-2026 23:47:22.377 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [/usr/local/tomcat/webapps/lpu-reservation-system] was found with a last modified time that did not match the associated WAR. It will be deleted.
+09-Jul-2026 23:47:27.347 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+09-Jul-2026 23:47:28.493 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/usr/local/tomcat/webapps/lpu-reservation-system.war] has finished in [6,128] ms
+09-Jul-2026 23:47:28.494 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/usr/local/tomcat/webapps/uploads]
+09-Jul-2026 23:47:28.528 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/usr/local/tomcat/webapps/uploads] has finished in [34] ms
+09-Jul-2026 23:47:28.534 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Jul-2026 23:47:28.565 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [6281] milliseconds

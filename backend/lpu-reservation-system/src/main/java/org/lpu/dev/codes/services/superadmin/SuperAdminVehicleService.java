@@ -12,6 +12,7 @@ import org.lpu.dev.codes.model.dto.CreateVehicleRequest;
 import org.lpu.dev.codes.model.dto.PopulateVehicleList;
 import org.lpu.dev.codes.model.dto.UpdateVehicleRequest;
 import org.lpu.dev.codes.repository.VehicleRepository;
+import org.lpu.dev.codes.repository.VanReservationRepository;
 import org.lpu.dev.codes.services.FacilityService;
 import org.lpu.dev.codes.services.JWTService;
 import org.lpu.dev.codes.services.VehicleImageService;
@@ -25,9 +26,12 @@ public class SuperAdminVehicleService {
 	private static final Logger logger = LogManager.getLogger(SuperAdminVehicleService.class);
 	@Autowired
 	private VehicleImageService imageService;
-	
+
 	@Autowired
 	private VehicleRepository vehicleRepository;
+
+	@Autowired
+	private VanReservationRepository vanReservationRepository;
 
 	@Autowired
 	private FacilityService facServices;
@@ -57,6 +61,10 @@ public class SuperAdminVehicleService {
 		}).toList();
 	}
 
+	private boolean isVehicleRole(String role) {
+		return "SUPERADMIN".equals(role) || "FACILITIESADMIN".equals(role);
+	}
+
 	@Transactional
 	public PopulateVehicleResponse getAllVehicles(String token) {
 
@@ -72,7 +80,7 @@ public class SuperAdminVehicleService {
 				return response;
 			}
 
-			if (!"SUPERADMIN".equals(jwtService.getRole(token.replace("LpuL ", "")))) {
+			if (!isVehicleRole(jwtService.getRole(token.replace("LpuL ", "")))) {
 
 				response.setSuccess(false);
 				response.setMessage("Unauthorized");
@@ -160,6 +168,8 @@ public class SuperAdminVehicleService {
 				return response;
 			}
 
+			vanReservationRepository.clearVehicleReferences(vehicleId);
+
 			boolean deleted = vehicleRepository.deleteById(vehicleId);
 
 			response.setSuccess(deleted);
@@ -209,7 +219,7 @@ public class SuperAdminVehicleService {
 			vehicle.setStatus(request.getStatus() != null ? request.getStatus() : "AVAILABLE");
 
 			String image = normalizeImage(request.getImage());
-			
+
 			String imageUrl = imageService.saveImage(image);
 			logger.info(imageUrl);
 			vehicle.setImageUrl(imageUrl);
@@ -271,10 +281,11 @@ public class SuperAdminVehicleService {
 
 			vehicle.setFacility(facility);
 
-			String image = normalizeImage(request.getImage());
-
-			if (image != null) {
-				vehicle.setImageUrl(image);
+			if (request.getImage() != null && !request.getImage().trim().isEmpty()) {
+				String image = normalizeImage(request.getImage());
+				String imageUrl = imageService.saveImage(image);
+				logger.info(imageUrl);
+				vehicle.setImageUrl(imageUrl);
 			}
 
 			vehicleRepository.save(vehicle);

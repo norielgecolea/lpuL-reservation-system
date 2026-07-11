@@ -387,4 +387,45 @@ public class SuperAdminUserService {
 			return response;
 		}
 	}
+
+	@Transactional
+	public AccountStatementResponse resetPassword(String callerEmpId, String targetEmpId, String newPassword) {
+
+		AccountStatementResponse response = new AccountStatementResponse();
+
+		try {
+			if (callerEmpId != null && callerEmpId.equalsIgnoreCase(targetEmpId)) {
+				response.setSuccess(false);
+				response.setMessage("You cannot reset your own password from here");
+				return response;
+			}
+
+			if (newPassword == null || newPassword.length() < 6) {
+				response.setSuccess(false);
+				response.setMessage("Password must be at least 6 characters");
+				return response;
+			}
+
+			Users user = userRepository.findByEmployeeId(targetEmpId);
+			if (user == null) {
+				response.setSuccess(false);
+				response.setMessage("User not found");
+				return response;
+			}
+
+			user.setPasswordHash(passwordEncoder.encode(newPassword));
+			userRepository.save(user);
+
+			logger.info("Password reset for employee ID: {}", targetEmpId);
+			response.setSuccess(true);
+			response.setMessage("Password reset successfully");
+			return response;
+
+		} catch (Exception e) {
+			logger.error("Failed to reset password for employee ID: {}", targetEmpId, e);
+			response.setSuccess(false);
+			response.setMessage("Failed to reset password");
+			return response;
+		}
+	}
 }

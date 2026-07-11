@@ -37,6 +37,11 @@ public class VehicleManagementController {
 	@Autowired
 	private JWTService jwtService;
 
+	private boolean isAllowed(String token) {
+		String role = jwtService.getRole(token);
+		return "SUPERADMIN".equals(role) || "FACILITIESADMIN".equals(role);
+	}
+
 	@GetMapping("/admin/vehicle")
 	public PopulateVehicleResponse populateAdminVehicles(@RequestHeader("Authorization") String authHeader) {
 
@@ -54,12 +59,15 @@ public class VehicleManagementController {
 			return res;
 		}
 
-		if ("SUPERADMIN".equals(jwtService.getRole(token))) {
+		if (isAllowed(token)) {
 
 			return superAdminVehicle.getAllVehicles(token);
 		}
 
-		return null;
+		PopulateVehicleResponse res = new PopulateVehicleResponse();
+		res.setSuccess(false);
+		res.setMessage("Unauthorized");
+		return res;
 	}
 
 	@PatchMapping("/admin/togglevehiclestat")
@@ -80,12 +88,15 @@ public class VehicleManagementController {
 			return res;
 		}
 
-		if ("SUPERADMIN".equals(jwtService.getRole(token))) {
+		if (isAllowed(token)) {
 
 			return superAdminVehicle.toggleVehicleStatus(id);
 		}
 
-		return null;
+		VehicleResponse res = new VehicleResponse();
+		res.setSuccess(false);
+		res.setMessage("Unauthorized");
+		return res;
 	}
 
 	@DeleteMapping("/admin/deletevehicle")
@@ -94,28 +105,36 @@ public class VehicleManagementController {
 
 		String token = authHeader.replace("LpuL ", "");
 
-		if ("SUPERADMIN".equals(jwtService.getRole(token))) {
+		if (isAllowed(token)) {
 
 			return superAdminVehicle.deleteVehicle(id);
 		}
 
-		return null;
+		VehicleResponse res = new VehicleResponse();
+		res.setSuccess(false);
+		res.setMessage("Unauthorized");
+		return res;
 	}
 
 	@PostMapping("/admin/createvehicle")
 	public VehicleResponse createVehicle(@RequestHeader("Authorization") String authHeader,
 			@RequestBody CreateVehicleRequest vehicle) {
-		logger.error("Called create");
 		String token = authHeader.replace("LpuL ", "");
-		if ("SUPERADMIN".equals(jwtService.getRole(token))) {
-			try {
-				return superAdminVehicle.createVehicle(vehicle);
-			} catch (Exception e) {
-				logger.error("Vehicle creation failed", e);
-				
-			}
+		if (!isAllowed(token)) {
+			VehicleResponse res = new VehicleResponse();
+			res.setSuccess(false);
+			res.setMessage("Unauthorized");
+			return res;
 		}
-		return superAdminVehicle.createVehicle(vehicle);
+		try {
+			return superAdminVehicle.createVehicle(vehicle);
+		} catch (Exception e) {
+			logger.error("Vehicle creation failed", e);
+			VehicleResponse res = new VehicleResponse();
+			res.setSuccess(false);
+			res.setMessage("Failed to create vehicle");
+			return res;
+		}
 	}
 
 	@PutMapping("/admin/updatevehicle")
@@ -124,9 +143,12 @@ public class VehicleManagementController {
 
 		String token = authHeader.replace("LpuL ", "");
 
-		if ("SUPERADMIN".equals(jwtService.getRole(token))) {
+		if (isAllowed(token)) {
 			return superAdminVehicle.updateVehicle(vehicle);
 		}
-		return null;
+		VehicleResponse res = new VehicleResponse();
+		res.setSuccess(false);
+		res.setMessage("Unauthorized");
+		return res;
 	}
 }

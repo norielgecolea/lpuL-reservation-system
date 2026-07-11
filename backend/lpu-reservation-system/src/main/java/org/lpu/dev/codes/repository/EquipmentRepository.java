@@ -75,6 +75,25 @@ public class EquipmentRepository {
                 .getResultList();
     }
 
+    public List<Equipment> getEquipmentByFacilityIds(List<Long> facilityIds) {
+
+        if (facilityIds == null || facilityIds.isEmpty()) {
+            return List.of();
+        }
+
+        String hql = """
+                FROM Equipment e
+                JOIN FETCH e.facility f
+                WHERE f.id IN :facilityIds
+                ORDER BY e.resource_name
+                """;
+
+        return entityManager
+                .createQuery(hql, Equipment.class)
+                .setParameter("facilityIds", facilityIds)
+                .getResultList();
+    }
+
     public boolean existsByName(String name) {
 
         String hql = """

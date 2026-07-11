@@ -6,6 +6,7 @@ import org.lpu.dev.codes.model.apiresponse.AccountStatementResponse;
 import org.lpu.dev.codes.model.apiresponse.PopulateUsersResponse;
 import org.lpu.dev.codes.model.data.Users;
 import org.lpu.dev.codes.model.dto.DeleteUserRequest;
+import org.lpu.dev.codes.model.dto.ResetPasswordRequest;
 import org.lpu.dev.codes.model.dto.UpdateUserRequest;
 import org.lpu.dev.codes.services.AuthenticationService;
 import org.lpu.dev.codes.services.JWTService;
@@ -172,6 +173,33 @@ public class UserManagementController {
 		} else {
 			return null;
 		}
+	}
+
+	@PatchMapping("/admin/resetpassword")
+	public AccountStatementResponse resetPassword(@RequestHeader("Authorization") String authHeader,
+			@RequestBody ResetPasswordRequest request) {
+
+		String token = authHeader.replace("LpuL ", "");
+
+		if (!auth.userActive(jwtService.getUsername(token))) {
+			AccountStatementResponse res = new AccountStatementResponse();
+			logger.error("User not Active! Possible Hacking!");
+			res.setSuccess(false);
+			res.setMessage("USER NOT ACTIVE!");
+			return res;
+		}
+
+		if (!"SUPERADMIN".equals(jwtService.getRole(token))) {
+			AccountStatementResponse response = new AccountStatementResponse();
+			response.setSuccess(false);
+			response.setMessage("Unauthorized");
+			return response;
+		}
+
+		String username = jwtService.getUsername(token);
+		Users caller = userService.findByUserName(username);
+
+		return userService.resetPassword(caller.getEmployeeId(), request.getEmployeeId(), request.getNewPassword());
 	}
 
 	// update user

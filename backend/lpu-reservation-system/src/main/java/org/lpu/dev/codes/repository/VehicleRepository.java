@@ -65,6 +65,7 @@ public class VehicleRepository {
 
         String hql = """
                 FROM Vehicle v
+                JOIN FETCH v.facility
                 WHERE v.facility.id = :facilityId
                 ORDER BY v.brand
                 """;

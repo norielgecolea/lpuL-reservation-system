@@ -29,6 +29,12 @@ public class Users {
 	@Column(name = "password_hash")
 	private String passwordHash;
 
+	@Column(name = "reset_token")
+	private String resetToken;
+
+	@Column(name = "reset_token_expires_at")
+	private java.time.LocalDateTime resetTokenExpiresAt;
+
 	private String status;
 
 	public Long getId() {
@@ -85,6 +91,14 @@ public class Users {
 
 	public void setPasswordHash(String passwordHash) {
 		this.passwordHash = passwordHash;
+	}
+
+	public String getResetToken() { return resetToken; }
+	public void setResetToken(String resetToken) { this.resetToken = resetToken; }
+
+	public java.time.LocalDateTime getResetTokenExpiresAt() { return resetTokenExpiresAt; }
+	public void setResetTokenExpiresAt(java.time.LocalDateTime resetTokenExpiresAt) {
+		this.resetTokenExpiresAt = resetTokenExpiresAt;
 	}
 
 	public String getStatus() {

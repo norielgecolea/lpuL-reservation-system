@@ -20,7 +20,7 @@ public class PopulateVehicleResponse {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public List<PopulateVehicleList> getEquipment() {
+	public List<PopulateVehicleList> getVehicles() {
 		return vehicles;
 	}
 	public void setVehicles(List<PopulateVehicleList> vehicles) {

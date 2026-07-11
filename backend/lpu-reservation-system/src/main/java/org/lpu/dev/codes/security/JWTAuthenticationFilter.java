@@ -6,7 +6,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lpu.dev.codes.model.data.Users;
 import org.lpu.dev.codes.repository.UserRepository;
-import org.lpu.dev.codes.services.superadmin.SuperAdminUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -19,13 +18,21 @@ import jakarta.servlet.http.HttpServletResponse;
 @Component
 public class JWTAuthenticationFilter extends OncePerRequestFilter {
 
-	private static final Logger LOGGER = LogManager.getLogger(SuperAdminUserService.class);
+	private static final Logger LOGGER = LogManager.getLogger(JWTAuthenticationFilter.class);
 
     @Autowired
     private JWTUtil jwtUtil;
 
     @Autowired
     private UserRepository usersRepository;
+
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) {
+        String path = request.getServletPath();
+        return path.startsWith("/api/auth/")
+                || path.startsWith("/api/flt/survey")
+                || path.startsWith("/ws");
+    }
 
     @Override
     protected void doFilterInternal(
@@ -35,7 +42,7 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
     	String path = request.getServletPath();
 
-    	if (path.startsWith("/api/auth/")) {
+    	if (path.startsWith("/api/auth/") || path.startsWith("/api/flt/survey")) {
     	    filterChain.doFilter(request, response);
     	    return;
     	}
